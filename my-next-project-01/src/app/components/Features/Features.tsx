@@ -5,15 +5,15 @@ interface Props {
   rightSide: boolean;
   title: string;
   data: { spanEl: string; text: string }[];
-  //   icon: React.ReactNode;
+  img: string;
 }
 
-const Features: FC<Props> = ({ rightSide, data, title }) => {
+const Features: FC<Props> = ({ rightSide, data, title, img }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 mb-20 ">
       {!rightSide && (
         <div className="flex items-center justify-center">
-          <FaCriticalRole style={{ width: "220px", height: "220px" }} />
+          <img className="object-contain h-128 w-96" src={img} alt={img} />
         </div>
       )}
       <div className="flex flex-col items-center">
@@ -35,7 +35,7 @@ const Features: FC<Props> = ({ rightSide, data, title }) => {
       </div>
       {rightSide && (
         <div className="flex items-center justify-center">
-          <FaCriticalRole style={{ width: "220px", height: "220px" }} />
+          <img className="object-contain h-96 w-96" src={img} alt={img} />
         </div>
       )}
     </div>
